@@ -2,7 +2,11 @@ n = input()
 m = input()
 w = input()
 
-z = 'зайка'
+i = [n, m, w]
+result = []
 
-if n.find(z) or m.find(z) or w.find(w):
-    print()
+for one in i:
+    if one.find('зайка') > 0:
+        result.append(one)
+
+print(f'{sorted(result)[0]} {len(sorted(result)[0])}')

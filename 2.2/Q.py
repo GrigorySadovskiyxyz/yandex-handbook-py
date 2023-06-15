@@ -4,14 +4,15 @@ c = float(input())
 
 d = (b * b) - (4 * a * c)
 
-if d < 0 and a > 0 and c > 0:
-    print('No solution')
-elif int(a) == 0 and int(c) == 0 and int(b) == 0:
+if not a and not b and not c:
     print('Infinite solutions')
-elif d == 0:
-    x = -b / (2 * a)
-    print("{:.2f}".format(x))
-elif d > 0:
-    x1 = (-b + ((b * b) - 4 * a * c) ** 0.5) / (2 * a)
-    x2 = (-b - ((b * b) - 4 * a * c) ** 0.5) / (2 * a)
-    print("{:.2f}".format(x2), "{:.2f}".format(x1))
+elif not a and not b and c or b ** 2 < 4 * a * c:
+    print('No solution')
+elif b ** 2 == 4 * a * c:
+    print(f'{-b / (2 * a):.2f}')
+elif not a:
+    print(f'{-c / b:.2f}')
+else:
+    roots = [(-b - (b ** 2 - 4 * a * c) ** 0.5) / (2 * a), (-b + (b ** 2 - 4 * a * c) ** 0.5) / (2 * a)]
+    roots.sort()
+    print(f'{roots[0]:.2f} {roots[1]:.2f}')
