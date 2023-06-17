@@ -1,8 +1,9 @@
-while (n := input()) != '':
-    if n.endswith('@@@'):
-        continue
-    elif n.startswith('##'):
-        print(n[2:])
-    else:
-        print(n)
-
+n = int(input())
+counter = 0
+sum = 0
+while counter != n:
+    number = input()
+    for i in number:
+        sum += int(i)
+    counter += 1
+print(sum)

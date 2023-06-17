@@ -1,8 +1,19 @@
 n = int(input())
-while n != 0:
-    s = input()
-    if s.find('зайка') != -1:
-        print(s.find('зайка') + 1)
-    else:
-        print('Заек нет =(')
-    n -= 1
+answer = ''
+comp = 0
+result = None
+for i in range(n):
+    name = input()
+    value = input()
+    sum = 0
+    for j in value:
+        sum += int(j)
+    answer += f'{name} {sum} '
+answer = answer.split(' ')
+for n in range(1, len(answer), 2):
+    if comp <= int(answer[n]):
+        comp = int(answer[n])
+        result = answer[n - 1]
+    elif comp >= int(answer[n]):
+        result = result
+print(result)

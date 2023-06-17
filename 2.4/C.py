@@ -1,8 +1,10 @@
-lol = int(input())
 n = int(input())
-for i in range(n):
-    w = input()
-    if len(w) <= lol:
-        print(w)
-    elif len(w) >= lol:
-        print(w[0:lol - 3] + '...')
+k = 1
+w = 1
+while k <= n:
+    for i in range(k, k + w):
+        if i <= n:
+            print(i, end=" ")
+    k += w 
+    w += 1
+    print()

@@ -1,7 +1,10 @@
+import math
+
 n = int(input())
-counter = 0
-while n != 0:
-    s = input()
-    counter += s.count('зайка')
+result = []
+while (n != 0):
+    i = int(input())
+    result.append(i)
     n -= 1
-print(counter)
+
+print(math.gcd(*result))
