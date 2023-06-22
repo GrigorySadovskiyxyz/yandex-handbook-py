@@ -1,8 +1,14 @@
-n = ['Манная', 'Гречневая', 'Пшённая', 'Овсяная', 'Рисовая']
-count = int(input())
-f1 = count // len(n)
-f2 = count % len(n)
-n = n * f1 + n[0:f2]
-for one in n:
-    print(one)
+n = int(input())
+result = {}
+counter = 0
+for i in range(n):
+    value = input()
+    result[value] = 1 + result.get(value, 0)
 
+for count in sorted(result):
+    if result[count] > 1:
+        print(f'{count} - {result[count]}')
+    elif result[count] == 1:
+        counter += 1
+if counter == n:
+    print('Однофамильцев нет')
