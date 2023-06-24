@@ -1,16 +1,15 @@
-lll = int(input())
-n = int(input())
 result = []
-
-while n != 0:
-    s = input()
-    result.append(s.rstrip())
-    n -= 1
-
-for o in result:
-    if lll - 3 >= len(o):
-        print(o[:lll])
-        lll -= len(o)
-    elif lll - 3 <= len(o):
-        print(o[:lll - 3] + '...')
-        break
+while (n := input().strip()) != '':
+    n = n.split()
+    for index, value in enumerate(n):
+        if value == 'зайка':
+            if index == 0:
+                result.append(n[index + 1])
+            elif index == len(n) - 1:
+                result.append(n[index - 1])
+            else:
+                result.append(n[index + 1])
+                result.append(n[index - 1])
+result = set(result)
+for each in result:
+    print(each)

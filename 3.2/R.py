@@ -1,14 +1,8 @@
-n = input()
+n = int(input())
 counter = 0
-d = []
-for x in range(len(n) - 1):
-    if n[x] != n[x + 1]:
-        counter += 1
-        d.append(f'{n[x]} {counter}')
-        counter = 0
-    else:
-        counter += 1
-d.append(f'{n[-1]} {counter + 1}')
-for i in d:
-    print(i)
-
+coordinates = []
+while n != 0:
+    xi_yi = input().split()
+    coordinates.append(*xi_yi)
+    n -= 1
+print(coordinates)
