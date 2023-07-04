@@ -14,7 +14,7 @@ class Programmer:
 
     def work(self, time=0):
         self.time = time
-        self.totalM += (self.salary + self.counter) * self.time
+        self.totalM += self.salary * self.time
         self.totalT += time
 
     def rise(self):
@@ -22,12 +22,24 @@ class Programmer:
             self.level = "Middle"
             self.salary = 15
         elif self.level == "Middle":
-            self.level == "Senior"
+            self.level = "Senior"
             self.salary = 20
         elif self.level == "Senior":
-            self.salary = self.salary
-            self.counter += 1
+            self.salary = self.salary + 1
 
     def info(self):
         return f"{self.name} {self.totalT}ч. {self.totalM}тгр."
 
+
+programmer = Programmer('Васильев Иван', 'Junior')
+programmer.work(750)
+print(programmer.info())
+programmer.rise()
+programmer.work(500)
+print(programmer.info())
+programmer.rise()
+programmer.work(250)
+print(programmer.info())
+programmer.rise()
+programmer.work(250)
+print(programmer.info())
