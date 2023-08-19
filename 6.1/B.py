@@ -1,6 +1,7 @@
-try:
-    func()
-except Exception as error:
-    print(type(error).__name__)
-else:
-    print('No Exceptions')   
+from math import gcd
+import sys
+
+for line in sys.stdin:
+    nums = line.strip('\n').split()
+    nums = list(map(int, nums))
+    print(gcd(*nums))
