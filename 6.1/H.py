@@ -30,3 +30,5 @@ def snake(MM, NN, direction='H'):
                     num += 1
     return matrix
 
+
+print(snake(5, 3))
