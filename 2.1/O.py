@@ -1,8 +1,0 @@
-N = int(input())
-M = int(input()) 
-T = int(input()) 
-hours = (T % (60 * 24) // 60)
-minutes = (T % 60)
-thours = (((hours + N) + (minutes + M) // 60) % 24)
-tminutes = ((minutes + M) % 60)
-print(f'{thours:02}:{tminutes:02}')

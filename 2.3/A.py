@@ -1,3 +1,5 @@
-while (input() != 'Три!'):
-    print(f"Режим ожидания...")
-print("Ёлочка, гори!")
+import pandas as pd
+data = pd.read_csv('2019.csv')
+
+print(data['Score'].max())
+print(data['Score'].min())

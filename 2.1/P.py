@@ -1,5 +1,0 @@
-a = int(input())
-b = int(input())
-c = int(input())
-time = float((b - a) // c + ((b - a) % c) / c)
-print(format(time, '.2f'))
